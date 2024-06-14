@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -14,11 +12,11 @@ function App() {
 function next(){
 
   if (count % 15 === 0) {
-    setMessage(message = "FizzBuzz" );
+    setMessage("FizzBuzz" );
   } else if (count % 5 === 0) {
-    setMessage(message = "Buzz" );
+    setMessage("Buzz" );
   } else if (count % 3 === 0) {
-    setMessage(message = "Fizz" );
+    setMessage("Fizz" );
   } else {
     setMessage(message = count);
   }
