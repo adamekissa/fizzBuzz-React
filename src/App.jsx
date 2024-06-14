@@ -9,6 +9,7 @@ function App() {
 
   function reset(){
     setCount(count = 0);
+    setMessage(0)
   }
 function next(){
 
@@ -27,7 +28,7 @@ function next(){
   return (
     <>
       <div className="card">
-        <p> {message}</p>
+        <p>{message}</p>
         <button onClick={next}>
           Next
         </button>
