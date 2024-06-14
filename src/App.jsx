@@ -5,7 +5,7 @@ import './App.css'
 
 function App() {
   let [count, setCount] = useState(0)
-  let [message, setMessage] = useState()
+  let [message, setMessage] = useState(0)
 
   function reset(){
     setCount(count = 0);
