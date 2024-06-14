@@ -4,19 +4,39 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  let [count, setCount] = useState(0)
+  let [message, setMessage] = useState()
+
+  function reset(){
+    setCount(count = 0);
+  }
+function next(){
+
+  if (count % 15 === 0) {
+    setMessage(message = "FizzBuzz" );
+  } else if (count % 5 === 0) {
+    setMessage(message = "Buzz" );
+  } else if (count % 3 === 0) {
+    setMessage(message = "Fizz" );
+  } else {
+    setMessage(message = count);
+  }
+  setCount( count + 1)
+  }
 
   return (
     <>
       <div className="card">
-        <p> message is {count}</p>
-        <button onClick={() => setCount((count) => count + 1)}>
+        <p> {message}</p>
+        <button onClick={next}>
           Next
         </button>
-        <button onClick={() => setCount((count) => count = 0)}>reset</button>
+        <button onClick={reset}>reset</button>
       </div>
     </>
   )
 }
 
 export default App
+
+
