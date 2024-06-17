@@ -2,31 +2,32 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  let [count, setCount] = useState(0)
-  let [message, setMessage] = useState(0)
+  const [count, setCount] = useState(0)
+  const message = getUtterance(count);
 
   function reset(){
-    setCount(count = 0);
-    setMessage(0)
+    setCount(1);
+  }
+  function getUtterance(count){
+    if (count % 15 === 0) {
+      return "FizzBuzz";
+    } else if (count % 5 === 0) {
+      return "Buzz";
+    } else if (count % 3 === 0) {
+      return "Fizz";
+    } else {
+      return count;
+    }
   }
 function next(){
-
-  if (count % 15 === 0) {
-    setMessage("FizzBuzz" );
-  } else if (count % 5 === 0) {
-    setMessage("Buzz" );
-  } else if (count % 3 === 0) {
-    setMessage("Fizz" );
-  } else {
-    setMessage(message = count);
-  }
   setCount( count + 1)
   }
 
   return (
     <>
+    <h3>Mohammed's FizzBuzz App</h3>
       <div className="card">
-        <p>{message}</p>
+        <p style={{backgroundColor: 'yellow', borderRadius:10, fontSize: 40}}>{message}</p>
         <button onClick={next}>
           Next
         </button>
